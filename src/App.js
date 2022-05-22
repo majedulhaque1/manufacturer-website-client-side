@@ -1,11 +1,17 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Navbar from './Pages/Shared/Navbar';
+import Home from './Pages/Home/Home';
+import Footer from './Pages/Shared/Footer';
 
 function App() {
   return (
     <div className="">
-      <h2>This is tools manufacturer website.</h2>
-      <button class="btn btn-primary">Button</button>
-      <button class="btn btn-secondary">Button</button>
+      <Navbar></Navbar>
+      <Routes>
+        <Route path='/' element={<Home></Home>}></Route>
+      </Routes>
+      <Footer></Footer>
     </div>
   );
 }
