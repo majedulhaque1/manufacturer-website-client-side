@@ -1,17 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {useForm} from 'react-hook-form';
 import {Link, useNavigate} from 'react-router-dom';
-import {useCreateUserWithEmailAndPassword, useUpdateProfile} from 'react-firebase-hooks/auth';
+import {useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile} from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import Loading from '../Shared/Loading';
 
 const SignUp = () => {
     const {register, handleSubmit, formState: {errors}} = useForm();
     const [createUserWithEmailAndPassword, sUser, sLoading, sError] = useCreateUserWithEmailAndPassword(auth);
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const [updateProfile, updating, uError] = useUpdateProfile(auth);
+    const [error, setError] = useState('');
     const navigate = useNavigate();
-    if(sUser){
+
+    useEffect(() =>{
+        if(sError || gError){
+            return setError(sError?.message || gError?.message);
+        }
+    },[sError, gError])
+    
+    if(sUser || gUser){
         navigate('/');
     }
+
+    if(sLoading || gLoading){
+        return <Loading></Loading>;
+    }
+
+    
     const handleSignUp = async (data) =>{
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({displayName: data.name});
@@ -48,12 +64,13 @@ const SignUp = () => {
                             <span className="label-text-alt">{errors.name?.type === 'required' &&"Name is required"}</span>
                         </label>
                     </div>
+                    <p className='text-red-400'>{error}</p>
                     <input className='btn btn-secondary w-full mx-w-xs' type="submit" value="Sign Up" />
                 </form>
                 <p className='mt-3'>Already have an account please <Link className='btn-link' to={'/login'}>login</Link></p>
                 <div className='divider'>OR</div>
                 <div>
-                    <button className='btn btn-outline w-full mx-w-xs'>Continue with google</button>
+                    <button onClick={() => signInWithGoogle()} className='btn btn-outline w-full mx-w-xs'>Continue with google</button>
                 </div>
             </div>
         </div>
