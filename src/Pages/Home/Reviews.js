@@ -3,8 +3,15 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import Review from './Review';
 import "swiper/css";
 import { Navigation, Pagination } from 'swiper';
+import {useQuery} from 'react-query';
+import Loading from '../Shared/Loading';
 
 const Reviews = () => {
+    const {data: reviews, isLoading} = useQuery('allProducts',() => fetch('http://localhost:5000/products').then(res => res.json()) );
+
+    if(isLoading){
+        return <Loading></Loading>
+    }
     return (
         <div className='w-screen h-auto justify-items-center py-24'>
             <div>
@@ -31,24 +38,13 @@ const Reviews = () => {
                     },
                 }}
                 >
-                    <SwiperSlide>
-                        <Review></Review>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Review></Review>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Review></Review>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Review></Review>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Review></Review>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Review></Review>
-                    </SwiperSlide>
+                    {
+                        reviews.map(review => <SwiperSlide key={review._id}>
+                            <Review key={review._id}
+                            review={review}></Review>
+                        </SwiperSlide>)
+                    }
+                    
                 </Swiper>
             </div>
         </div>
