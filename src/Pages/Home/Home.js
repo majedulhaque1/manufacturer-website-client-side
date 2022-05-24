@@ -1,5 +1,4 @@
 import React from 'react';
-import AddProduct from '../Dashboard/AddProduct';
 import Banner from './Banner';
 import BusinessSummary from './BusinessSummary';
 import Reviews from './Reviews';
@@ -12,7 +11,6 @@ const Home = () => {
             <Tools></Tools>
             <Reviews></Reviews>
             <BusinessSummary></BusinessSummary>
-            <AddProduct></AddProduct>
         </div>
     );
 };

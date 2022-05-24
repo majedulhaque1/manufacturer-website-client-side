@@ -5,6 +5,11 @@ import Home from './Pages/Home/Home';
 import Footer from './Pages/Shared/Footer';
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/Login/SignUp';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import AddProduct from './Pages/Dashboard/AddProduct';
+import MyReview from './Pages/Dashboard/MyReview';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 function App() {
   return (
@@ -14,7 +19,12 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
+        <Route path='/dashboard' element={<Dashboard></Dashboard>}>
+          <Route index element={<AddProduct></AddProduct>}></Route>
+          <Route path='/dashboard/myreview' element={<MyReview></MyReview>}></Route>
+        </Route>
       </Routes>
+      <ToastContainer></ToastContainer>
       <Footer></Footer>
     </div>
   );
