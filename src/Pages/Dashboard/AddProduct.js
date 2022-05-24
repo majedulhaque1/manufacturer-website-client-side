@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
+import Loading from '../Shared/Loading';
 
 const AddProduct = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const [loading, setLoading] = useState(true);
+
+
     const imageStorageKey = '1a95b859d1b88e314e6743fe5f6083aa';
     const onSubmit = (data) => {
         console.log(data)
@@ -40,6 +44,8 @@ const AddProduct = () => {
                     .then(data =>{
                         if(data.insertedId){
                             toast.success('Product added sucessfully');
+                            // setLoading(false);
+                            reset();
                         }
                     })
             }

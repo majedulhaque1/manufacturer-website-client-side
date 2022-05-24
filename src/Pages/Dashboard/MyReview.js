@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {useForm} from 'react-hook-form';
 import { toast } from 'react-toastify';
+import Loading from '../Shared/Loading';
 
 const MyReview = () => {
     const {register, handleSubmit,reset, formState: {errors}} = useForm();
+    const [loading, setLoading] = useState(true);
 
     const imageStorageKey = '1a95b859d1b88e314e6743fe5f6083aa';
     const onSubmit = (data) => {
-        console.log(data)
+        console.log(data);
         const image = data.image[0];
         const formData = new FormData();
         formData.append('image', image);
