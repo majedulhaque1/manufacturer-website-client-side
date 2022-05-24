@@ -7,7 +7,7 @@ import {useQuery} from 'react-query';
 import Loading from '../Shared/Loading';
 
 const Reviews = () => {
-    const {data: reviews, isLoading} = useQuery('allProducts',() => fetch('http://localhost:5000/products').then(res => res.json()) );
+    const {data: reviews, isLoading} = useQuery('allReviews',() => fetch('http://localhost:5000/reviews').then(res => res.json()) );
 
     if(isLoading){
         return <Loading></Loading>
