@@ -29,7 +29,7 @@ const AddProduct = () => {
                     productName: data.name,
                     image: image,
                     price: data.price,
-                    minimunQuantity: data.minimunQuantity,
+                    minimumQuantity: data.minimumQuantity,
                     quantity: data.quantity,
                     description: data.description
                 }

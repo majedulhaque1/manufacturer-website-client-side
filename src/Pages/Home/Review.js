@@ -3,7 +3,6 @@ import image from '../../Assets/Images/Group 33091.png';
 
 const Review = ({review}) => {
     const {_id,image, name, rating, description} = review;
-    console.log(review);
     return (
         <div className='w-72'>
             <div className='flex justify-between'>
