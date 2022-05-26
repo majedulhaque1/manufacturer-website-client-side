@@ -13,9 +13,9 @@ const Login = () => {
     const [error, setError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
-    const token = useToken(sUser || gUser);
+    const [token] = useToken(sUser || gUser);
     let from = location.state?.from?.pathname || '/';
-
+    console.log(token)
     useEffect(() =>{
         if(sError || gError){
         return setError(sError?.message || gError?.message);
@@ -26,7 +26,7 @@ const Login = () => {
         return <Loading></Loading>
     }
     
-    if(sUser || gUser){
+    if(token){
         navigate(from, {replace:true});
     }
     

@@ -1,14 +1,14 @@
 import React from 'react';
 
-const OrderRow = () => {
+const OrderRow = ({order}) => {
+    const {_id, name, email, minimumQuantity, phone} = order;
     return (
-        <div>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </div>
+        <tbody>
+            <td>{name}</td>
+            <td>{email}</td>
+            <td>{minimumQuantity}</td>
+            <td>{phone}</td>
+        </tbody>
     );
 };
 

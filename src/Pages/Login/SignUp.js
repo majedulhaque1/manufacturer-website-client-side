@@ -13,7 +13,7 @@ const SignUp = () => {
     const [updateProfile, updating, uError] = useUpdateProfile(auth);
     const [error, setError] = useState('');
     const navigate = useNavigate();
-    const token = useToken(sUser || gUser);
+    const [token] = useToken(sUser || gUser);
 
     useEffect(() =>{
         if(sError || gError){
@@ -21,7 +21,7 @@ const SignUp = () => {
         }
     },[sError, gError])
     
-    if(sUser || gUser){
+    if(token){
         navigate('/');
     }
 

@@ -41,11 +41,12 @@ const Purchase = () => {
         const minimumQuantity = minquantity;
         const phone = data.phone;
         const order = {name, email, minimumQuantity, phone};
+        console.log(order);
 
         fetch('http://localhost:5000/orders',{
             method: "POST",
             headers:{
-                'constent-type' : 'application/json'
+                'content-type' : 'application/json'
             },
             body: JSON.stringify(order)
         })

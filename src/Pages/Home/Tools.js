@@ -4,7 +4,12 @@ import {useQuery} from 'react-query';
 import Loading from '../Shared/Loading';
 
 const Tools = () => {
-    const {data: products, isLoading} = useQuery('allProducts',() => fetch('http://localhost:5000/products').then(res => res.json()) );
+    const {data: products, isLoading} = useQuery('allProducts',() => fetch('http://localhost:5000/products',{
+        method: "GET",
+        headers:{
+            authorization : `Bearer ${localStorage.getItem('accessToken')}`
+        }
+    }).then(res => res.json()) );
 
     if(isLoading){
         return <Loading></Loading>
@@ -16,7 +21,7 @@ const Tools = () => {
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-4/5 mx-auto'>
                 {
-                    products?.reverse().map(product => <Tool key={product._id}
+                    products?.map(product => <Tool key={product._id}
                         product={product}
                     ></Tool>)
                 }

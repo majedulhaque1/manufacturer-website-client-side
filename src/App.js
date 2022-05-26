@@ -12,6 +12,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import Purchase from './Pages/Home/Purchase';
 import Users from './Pages/Dashboard/Users';
+import Orders from './Pages/Dashboard/Orders';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route index element={<AddProduct></AddProduct>}></Route>
           <Route path='/dashboard/myreview' element={<MyReview></MyReview>}></Route>
           <Route path='/dashboard/users' element={<Users></Users>}></Route>
+          <Route path='/dashboard/orders' element={<Orders></Orders>}></Route>
         </Route>
       </Routes>
       <ToastContainer></ToastContainer>

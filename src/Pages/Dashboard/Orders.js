@@ -1,9 +1,14 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import {useQuery} from 'react-query';
+import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
+import OrderRow from '../Dashboard/OrderRow';
 
 const Orders = () => {
-    const {data: orders, isLoading} = useQuery('orders',() => fetch(`http://localhost:5000/orders?buyer=${email}`).then(res => res.json()) );
+    const [user] = useAuthState(auth);
+    const email = user?.email;
+    const {data: orders, isLoading} = useQuery(['orders', email],() => fetch(`http://localhost:5000/orders?buyer=${email}`).then(res => res.json()) );
     if(isLoading){
         return <Loading></Loading>;
     }
@@ -11,15 +16,14 @@ const Orders = () => {
         <div>
             <table className='table w-full'>
                 <thead>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Order Quantity</th>
+                    <th>Phone</th>
                 </thead>
-                <tbody>
-                    
-                </tbody>
+                {
+                    orders.map(order => <OrderRow key={order._id} order={order}></OrderRow>)
+                }
             </table>
         </div>
     );
