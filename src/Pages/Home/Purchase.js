@@ -22,13 +22,13 @@ const Purchase = () => {
 
     // const timeOut = setTimeout(handleChange,500);
     const handleChange = (e) =>{
-        const quantity = e.target.value;
-        setMinQuantity(quantity);
+        const minquantity = e.target.value;
+        setMinQuantity(minquantity);
         console.log(quantity);
-        if(quantity < 200){
+        if(quantity < minimumQuantity){
             toast.success(`Your can not order bellow minimum order`);
         }
-        else if(quantity > 8000){
+        else if(minquantity > quantity){
             toast.error('You can not order more than avaiable quantity');
         }
     }
@@ -62,9 +62,9 @@ const Purchase = () => {
         <div>
             <div className='flex justify-between shadow-2xl rounded-lg w-4/5 mx-auto p-12 mt-5'>
                 <div>
-                    <img className='w-2/4 pr-5' src={image} alt="" />
+                    <img className='w-2/4 pr-5' src={image} alt="Product img" />
                 </div>
-                <div className='w-full'>
+                <div className='w-2/4'>
                     <h3 className='text-secondary'>{productName}</h3>
                     <p className='text-accent'>{description}</p>
                     <p className='text-accent'>Minimum Orders: <small>{minimumQuantity}</small></p>

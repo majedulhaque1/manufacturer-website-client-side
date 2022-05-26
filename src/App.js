@@ -13,6 +13,7 @@ import 'react-toastify/dist/ReactToastify.min.css';
 import Purchase from './Pages/Home/Purchase';
 import Users from './Pages/Dashboard/Users';
 import Orders from './Pages/Dashboard/Orders';
+import MangeProduct from './Pages/Dashboard/MangeProduct';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path='/dashboard/myreview' element={<MyReview></MyReview>}></Route>
           <Route path='/dashboard/users' element={<Users></Users>}></Route>
           <Route path='/dashboard/orders' element={<Orders></Orders>}></Route>
+          <Route path='/dashboard/allorders' element={<MangeProduct></MangeProduct>}></Route>
         </Route>
       </Routes>
       <ToastContainer></ToastContainer>
