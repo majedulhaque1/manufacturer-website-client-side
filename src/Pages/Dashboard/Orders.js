@@ -8,7 +8,12 @@ import OrderRow from '../Dashboard/OrderRow';
 const Orders = () => {
     const [user] = useAuthState(auth);
     const email = user?.email;
-    const {data: orders, isLoading} = useQuery(['orders', email],() => fetch(`http://localhost:5000/orders?buyer=${email}`).then(res => res.json()) );
+    const {data: orders, isLoading} = useQuery(['orders', email],() => fetch(`http://localhost:5000/orders?buyer=${email}`,{
+        method: "GET",
+        headers:{
+            authorization : `Bearer ${localStorage.getItem('accessToken')}`
+        }
+    }).then(res => res.json()) );
     if(isLoading){
         return <Loading></Loading>;
     }

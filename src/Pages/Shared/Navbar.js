@@ -14,9 +14,9 @@ const Navbar = () => {
     <li><Link to={'/'}>Home</Link></li>
     <li><Link to={'/'}>Tools</Link></li>
     <li><Link to={'/'}>Reviews</Link></li>
-    <li><Link to={'/login'}>Login</Link></li>
-    <li><Link to={'/signup'}>Sign Up</Link></li>
-    <li><Link to={'/dashboard'}>Dashboard</Link></li>
+    {!user && <li><Link to={'/login'}>Login</Link></li>}
+    {!user && <li><Link to={'/signup'}>Sign Up</Link></li>}
+    {user && <li><Link to={'/dashboard'}>Dashboard</Link></li>}
     {user && <button onClick={logOut} className='btn btn-secondary text-white'>Sign Out</button>}
     </>
     return (

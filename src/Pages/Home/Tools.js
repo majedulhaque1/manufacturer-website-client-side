@@ -1,18 +1,28 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import Tool from './Tool';
 import {useQuery} from 'react-query';
 import Loading from '../Shared/Loading';
 
 const Tools = () => {
+    // const [products , setProducts] = useState([]);
     const {data: products, isLoading} = useQuery('allProducts',() => fetch('http://localhost:5000/products',{
         method: "GET",
         headers:{
-            authorization : `Bearer ${localStorage.getItem('accessToken')}`
+            'authorization' : `Bearer ${localStorage.getItem('accessToken')}`
         }
     }).then(res => res.json()) );
 
+    // useEffect(() =>{
+    //     fetch('http://localhost:5000/products',{
+    //     method: "GET",
+    //     headers:{
+    //         authorization : `Bearer ${localStorage.getItem('accessToken')}`
+    //     }
+    // }).then(res => res.json())
+    // .then(data => setProducts(data))
+    // },[])
     if(isLoading){
-        return <Loading></Loading>
+        return <Loading></Loading>;
     }
     return (
         <div className='w-screen h-auto py-12'>
