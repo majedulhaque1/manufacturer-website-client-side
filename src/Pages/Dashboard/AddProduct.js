@@ -52,7 +52,7 @@ const AddProduct = () => {
         })
     }
     return (
-        <div className='h-auto flex justify-center items-center'>
+        <div className='h-auto flex justify-center flex-wrap items-center'>
             <div className='bg-white w-full m-12 shadow-2xl rounded-lg p-8'>
                 <form onSubmit={handleSubmit(onSubmit)} className='flex justify-center' action="">
                     <div className='mr-6 w-2/4'>

@@ -4,6 +4,7 @@ import {Link, useLocation, useNavigate} from 'react-router-dom';
 import {useSignInWithEmailAndPassword, useSignInWithGoogle,} from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
+import Navbar from '../Shared/Navbar';
 import useToken from '../../hooks/useToken';
 
 const Login = () => {
@@ -15,7 +16,7 @@ const Login = () => {
     const location = useLocation();
     const [token] = useToken(sUser || gUser);
     let from = location.state?.from?.pathname || '/';
-    console.log(token)
+    // console.log(token)
     useEffect(() =>{
         if(sError || gError){
         return setError(sError?.message || gError?.message);
@@ -36,6 +37,11 @@ const Login = () => {
         signInWithEmailAndPassword(data.email, data.password);
     }
     return (
+        <>
+        <div className='bg-accent'>
+
+        <Navbar></Navbar>
+        </div>
         <div className='h-screen flex justify-center items-center'>
             <div className='bg-white border-l-8 border-accent shadow-2xl p-8'>
                 <form className='w-80' onSubmit={handleSubmit(handleLogin)} action="">
@@ -69,6 +75,7 @@ const Login = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 

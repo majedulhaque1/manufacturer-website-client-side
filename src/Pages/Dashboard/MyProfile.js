@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import auth from '../../firebase.init';
 
 const MyProfile = () => {
+    const [profileInfo, setProfileInfo] = useState([]);
     const [user] = useAuthState(auth);
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-
+    useEffect(()=>{
+        fetch('http://localhost:5000/profile',{
+            method: "GET",
+        })
+        .then(res => res.json())
+        .then(data => setProfileInfo(data))
+    },[])
     const onSubmit = (data) =>{
         console.log(data);
         const education = data.education;
@@ -28,14 +35,14 @@ const MyProfile = () => {
         <div>
             <div className='flex justify-between shadow-2xl rounded-lg w-4/5 mx-auto p-12 mt-5'>
                 <div>
-                    <img className='w-2/4 pr-5' src='' alt="Product img" />
+                    <img className='w-2/4 pr-5' src={user?.photoURL} alt="Product img" />
                 </div>
                 <div className='w-2/4'>
                     <h3 className='text-secondary'>{user?.displayName}</h3>
                     <p className='text-accent'>{user?.email}</p>
-                    <p className='text-accent'>Country: <small></small></p>
-                    <p className='text-accent'>City:<small></small></p>
-                    <p className='text-accent'>Street adress:<small></small></p>
+                    <p className='text-accent'>Education:<small>{profileInfo.education}</small></p>
+                    <p className='text-accent'>City:<small>{profileInfo.city}</small></p>
+                    <p className='text-accent'>Street adress:<small>{profileInfo.linkedinProfile}</small></p>
                 </div>
             </div>
             <div className='w-4/5 mx-auto shadow-2xl rounded-lg p-12 mt-5'>

@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer className="bg-base-200">
+        <footer className="bg-accent">
             <div className='footer p-10 text-base-content w-4/5 mx-auto'>
             <div>
                 <span className="footer-title">Services</span>
                 <Link className='link link-hover' to={'/'}>Home</Link>
-                <Link className='link link-hover' to={'/'}>Home</Link>
-                <Link className='link link-hover' to={'/'}>Home</Link>
-                <Link className='link link-hover' to={'/'}>Home</Link>
+                <Link className='link link-hover' to={'/'}>Tools</Link>
+                <Link className='link link-hover' to={'/'}>Review</Link>
+                <Link className='link link-hover' to={'/'}>Blogs</Link>
             </div>
             <div>
                 <span className="footer-title">Company</span>

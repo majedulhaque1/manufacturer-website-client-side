@@ -18,9 +18,9 @@ const Reviews = () => {
         return <Loading></Loading>
     }
     return (
-        <div className='w-screen h-auto justify-items-center py-24'>
+        <div className='w-screen h-auto justify-items-center my-24'>
             <div>
-                <h2 className='text-3xl mb-24 text-center text-secondary'>Clients Reviews</h2>
+                <h2 className='text-4xl mb-24 text-center text-secondary'>Clients Reviews</h2>
             </div>
             <div className='w-4/5 mx-auto'>
                 <Swiper

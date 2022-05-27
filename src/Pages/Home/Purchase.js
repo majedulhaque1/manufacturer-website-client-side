@@ -60,7 +60,7 @@ const Purchase = () => {
     }
     return (
         <div>
-            <div className='flex justify-between shadow-2xl rounded-lg w-4/5 mx-auto p-12 mt-5'>
+            <div className='flex justify-between flex-wrap shadow-2xl rounded-lg w-4/5 mx-auto p-12 mt-5'>
                 <div>
                     <img className='w-2/4 pr-5' src={image} alt="Product img" />
                 </div>
@@ -73,7 +73,7 @@ const Purchase = () => {
                 </div>
             </div>
             <div className='w-4/5 mx-auto shadow-2xl rounded-lg p-12 mt-5'>
-            <form onSubmit={handleSubmit(handleOrders)} className='flex justify-center' action="">
+            <form onSubmit={handleSubmit(handleOrders)} className='flex justify-center flex-wrap' action="">
                     <div className='mr-6 w-2/4'>
                         <div className='form-group w-full mx-w-xs'>
                             <label htmlFor="" className='label-text'>Name</label>

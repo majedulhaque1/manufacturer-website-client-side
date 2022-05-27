@@ -5,6 +5,7 @@ import {useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
 import useToken from '../../hooks/useToken';
+import Navbar from '../Shared/Navbar';
 
 const SignUp = () => {
     const {register, handleSubmit, formState: {errors}} = useForm();
@@ -35,6 +36,11 @@ const SignUp = () => {
         await updateProfile({displayName: data.name});
     }
     return (
+        <>
+        <div className='bg-accent'>
+
+        <Navbar className='bg-accent'></Navbar>
+        </div>
         <div className='w-screen h-screen flex justify-center items-center'>
             <div className='bg-white border-l-8 border-accent shadow-2xl p-8'>
                 <form className='w-80' onSubmit={handleSubmit(handleSignUp)} action="">
@@ -76,6 +82,7 @@ const SignUp = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 

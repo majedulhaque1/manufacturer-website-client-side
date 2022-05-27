@@ -19,14 +19,14 @@ const ProductRow = ({product}) => {
         }
     }
     return (
-            <table>
-                <td><img src={image} alt="product img"/></td>
+            <tbody>
+                <td><img className='w-12' src={image} alt="product img"/></td>
                 <td>{productName}</td>
                 <td>{price}</td>
                 <td>{minimumQuantity}</td>
                 <td>{quantity}</td>
                 <td><button onClick={() => handleDelete(_id)} className='btn btn-error text-white'>Delete</button></td>
-            </table>
+            </tbody>
     );
 };
 

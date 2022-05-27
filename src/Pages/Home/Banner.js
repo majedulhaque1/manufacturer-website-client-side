@@ -1,50 +1,25 @@
 import React from 'react';
-import {Swiper, SwiperSlide} from 'swiper/react';
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
-import {Navigation, Pagination} from 'swiper';
 import image from '../../Assets/Images/Group 33091.png';
 
 const Banner = () => {
     return (
         <>
-        <div className='w-4/5 h-screen mx-auto mt-5 bg-yellow-400'>
-        <Swiper
-        navigation={true}
-        pagination={true}
-        modules={[Navigation, Pagination]}
-        slidesPerView={1}
-        >
-            <SwiperSlide>
-                <div className='flex justify-center items-center'>
-                    <h2 className='text-4xl text-secondary'>
-                        <span>We Provide Best Quality</span>
-                        <span>And with Best Price</span>
-                    </h2>
-                    <img className='w-48' src={image} alt="" />
-                </div>
-            </SwiperSlide>
-            <SwiperSlide>
-                <div className='flex justify-center items-center'>
-                    <h2 className='text-4xl text-secondary'>
-                        <span>We Provide Best Quality</span>
-                        <span>And with Best Price</span>
-                    </h2>
-                    <img className='w-48' src={image} alt="" />
-                </div>
-            </SwiperSlide>
-            <SwiperSlide>
-                <div className='flex justify-center items-center'>
-                    <h2 className='text-4xl text-secondary'>
-                        <span>We Provide Best Quality</span>
-                        <span>And with Best Price</span>
-                    </h2>
-                    <img className='w-48' src={image} alt="" />
-                </div>
-            </SwiperSlide>
-        </Swiper>
+        <div className='w-full h-screen flex justify-center items-center'>
+            <div>
+
+            <h1 className='text-white capitalize mb-8 text-3xl lg:text-6xl text-center'>
+                <p className='my-5'>We provide best quality product</p>
+                <p>And provide best price</p>
+            </h1>
+            <div className='flex justify-center items-center'>
+                <button className='btn btn-accent rounded-3xl text-white'>About Us</button>
+                <button className='btn btn-outline text-white border-2 ml-5 rounded-3xl border-accent test-white'>Learn More</button>
+            </div>
+            </div>
         </div>
         </>
     );
