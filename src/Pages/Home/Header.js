@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../../Assets/Images/doctor-with-co-workers-analyzing-x-ray.jpg';
+import image from '../../Assets/Images/bg.jpg';
 import Navbar from '../Shared/Navbar';
 import Banner from './Banner';
 

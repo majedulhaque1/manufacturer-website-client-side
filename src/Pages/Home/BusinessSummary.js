@@ -5,7 +5,7 @@ const BusinessSummary = () => {
     return (
         <>
             <div className='text-center'>
-                <h2 className='text-center text-5xl font-semibold my-5'>Why Trust Us</h2>
+                <h2 className='text-center text-accent text-4xl mt-24'>Why Trust Us</h2>
             </div>
             <div className='flex justify-evenly items-center flex-wrap w-4/5 my-16 mx-auto'>
                 <div className='card'>

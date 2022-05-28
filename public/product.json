@@ -1,0 +1,66 @@
+[
+    {
+        "productName" : "stainless steel plus",
+        "image" : "https://i.ibb.co/MhjmmTK/images-3.jpg",
+        "price" : 4,
+        "minimumQuantity" : 80,
+        "quantity" : 8000,
+        "description" : "This is heavy duty plus"
+    },
+    {
+        "productName" : "stainless steel hammer",
+        "image" : "https://i.ibb.co/vB7bqDy/13-133400-erkoma-clipart-free-stock-transparent-hardware-tools.jpg",
+        "price" : 4,
+        "minimumQuantity" : 80,
+        "quantity" : 8000,
+        "description" : "This is heavy duty plus.And long lasting"
+    },
+    {
+        "productName" : "stainless steel nut remover with griper",
+        "image" : "https://i.ibb.co/JR99sXQ/images.jpg",
+        "price" : 4,
+        "minimumQuantity" : 80,
+        "quantity" : 8000,
+        "description" : "This is heavy duty plus.Durable nut remover"
+    },
+    {
+        "productName" : "Plus long Scro driver",
+        "image" : "https://i.ibb.co/jbp3NMw/images-1.jpg",
+        "price" : 4,
+        "minimumQuantity" : 80,
+        "quantity" : 8000,
+        "description" : "This is heavy duty plus"
+    },
+    {
+        "productName" : "stainless steel plus",
+        "image" : "https://i.ibb.co/jbp3NMw/images-1.jpg",
+        "price" : 4,
+        "minimumQuantity" : 80,
+        "quantity" : 8000,
+        "description" : "This is heavy duty plus"
+    },
+    {
+        "productName" : "stainless steel plus",
+        "image" : "https://i.ibb.co/jbp3NMw/images-1.jpg",
+        "price" : 4,
+        "minimumQuantity" : 80,
+        "quantity" : 8000,
+        "description" : "This is heavy duty plus"
+    },
+    {
+        "productName" : "stainless steel plus",
+        "image" : "https://i.ibb.co/jbp3NMw/images-1.jpg",
+        "price" : 4,
+        "minimumQuantity" : 80,
+        "quantity" : 8000,
+        "description" : "This is heavy duty plus"
+    },
+    {
+        "productName" : "stainless steel plus",
+        "image" : "https://i.ibb.co/jbp3NMw/images-1.jpg",
+        "price" : 4,
+        "minimumQuantity" : 80,
+        "quantity" : 8000,
+        "description" : "This is heavy duty plus"
+    }
+]

@@ -52,9 +52,9 @@ const AddProduct = () => {
         })
     }
     return (
-        <div className='h-auto flex justify-center flex-wrap items-center'>
+        <div className='h-auto flex justify-center items-center'>
             <div className='bg-white w-full m-12 shadow-2xl rounded-lg p-8'>
-                <form onSubmit={handleSubmit(onSubmit)} className='flex justify-center' action="">
+                <form onSubmit={handleSubmit(onSubmit)} className='flex justify-center flex-wrap' action="">
                     <div className='mr-6 w-2/4'>
                         <div className='form-group w-full mx-w-xs'>
                             <label htmlFor="" className='label-text'>Product Title</label>
@@ -66,7 +66,7 @@ const AddProduct = () => {
                         </div>
                         <div className='form-group w-full mx-w-xs'>
                             <label htmlFor="" className='label-text'>Minimum Quantity</label>
-                            <input {...register("minimunQuantity", { required: true })} className='input input-bordered my-2 w-full mx-w-xs' type="number" />
+                            <input {...register("minimumQuantity", { required: true })} className='input input-bordered my-2 w-full mx-w-xs' type="number" />
                         </div>
                         <div className='form-group w-full mx-w-xs'>
                             <label htmlFor="" className='label-text'>Quantity</label>

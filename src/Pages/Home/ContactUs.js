@@ -2,7 +2,7 @@ import React from 'react';
 
 const ContactUs = () => {
     return (
-        <div className='flex justify-center items-center'>
+        <div className='flex justify-center items-center my-12'>
             <form className='lg:w-2/4 mx-w-xs' action="">
                 <h2 className='text-accent text-4xl my-8 text-center'>Get In Touch</h2>
                 <label htmlFor="">Name</label><br />
