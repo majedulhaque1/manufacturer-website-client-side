@@ -3,7 +3,7 @@ import {useQuery} from 'react-query';
 import Loading from '../Shared/Loading';
 
 const Tools = () => {
-    const {data: products, isLoading} = useQuery('allProducts',() => fetch('http://localhost:5000/products',{
+    const {data: products, isLoading} = useQuery('allProducts',() => fetch('https://cryptic-citadel-18059.herokuapp.com/products',{
         method: "GET",
         headers:{
             'authorization' : `Bearer ${localStorage.getItem('accessToken')}`

@@ -7,7 +7,7 @@ import {useQuery} from 'react-query';
 import Loading from '../Shared/Loading';
 
 const Reviews = () => {
-    const {data: reviews, isLoading} = useQuery('allReviews',() => fetch('http://localhost:5000/reviews',{
+    const {data: reviews, isLoading} = useQuery('allReviews',() => fetch('https://cryptic-citadel-18059.herokuapp.com/reviews',{
         method: "GET",
         headers:{
             'authorization' : `Bearer ${localStorage.getItem('accessToken')}`

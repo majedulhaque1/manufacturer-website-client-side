@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading';
 import OrderRow from './OrderRow';
 
 const MangeOrders = () => {
-    const {data: orders, isLoading} = useQuery('allorders',() => fetch(`http://localhost:5000/allorders`,{
+    const {data: orders, isLoading} = useQuery('allorders',() => fetch(`https://cryptic-citadel-18059.herokuapp.com/allorders`,{
         method: "GET",
         headers:{
             authorization : `Bearer ${localStorage.getItem('accessToken')}`

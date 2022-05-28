@@ -6,7 +6,7 @@ const ProductRow = ({product}) => {
         const procced = window.confirm('Are You want delete product');
         console.log(procced);
         if(procced === true){
-            fetch(`http://localhost:5000/products/${id}`,{
+            fetch(`https://cryptic-citadel-18059.herokuapp.com/products/${id}`,{
                 method: "DELETE",
                 headers:{
                     authorization : `Bearer ${localStorage.getItem('accessToken')}`

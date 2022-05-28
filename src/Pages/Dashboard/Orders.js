@@ -8,7 +8,7 @@ import OrderRow from '../Dashboard/OrderRow';
 const Orders = () => {
     const [user] = useAuthState(auth);
     const email = user?.email;
-    const {data: orders, isLoading} = useQuery(['orders', email],() => fetch(`http://localhost:5000/orders?buyer=${email}`,{
+    const {data: orders, isLoading} = useQuery(['orders', email],() => fetch(`https://cryptic-citadel-18059.herokuapp.com/orders?buyer=${email}`,{
         method: "GET",
         headers:{
             authorization : `Bearer ${localStorage.getItem('accessToken')}`

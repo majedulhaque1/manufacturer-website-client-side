@@ -5,7 +5,7 @@ import OrderRow from './OrderRow';
 import ProductRow from './ProductRow';
 
 const MangeProduct = () => {
-    const { data: products, isLoading } = useQuery('allProducts', () => fetch('http://localhost:5000/products', {
+    const { data: products, isLoading } = useQuery('allProducts', () => fetch('https://cryptic-citadel-18059.herokuapp.com/products', {
         method: "GET",
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`

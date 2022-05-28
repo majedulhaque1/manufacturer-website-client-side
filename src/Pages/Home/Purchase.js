@@ -15,7 +15,7 @@ const Purchase = () => {
     // console.log(product);
     const {image, productName, price, minimumQuantity, quantity, description} = product;
     useEffect(() =>{
-        fetch(`http://localhost:5000/products/${ProductId}`)
+        fetch(`https://cryptic-citadel-18059.herokuapp.com/products/${ProductId}`)
         .then(res => res.json())
         .then(data => setProduct(data))
     },[ProductId])
@@ -43,7 +43,7 @@ const Purchase = () => {
         const order = {name, email, minimumQuantity, phone};
         console.log(order);
 
-        fetch('http://localhost:5000/orders',{
+        fetch('https://cryptic-citadel-18059.herokuapp.com/orders',{
             method: "POST",
             headers:{
                 'content-type' : 'application/json'

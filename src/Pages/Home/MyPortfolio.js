@@ -36,10 +36,8 @@ const MyPortfolio = () => {
             </div>
             <div className='my-5'>
                 <h2>My Projects Link:</h2>
-                <p>link</p>
-                <p>link</p>
-                <p>link</p>
-                <p>link</p>
+                <p>https://majedulhaque1.github.io/influencer-gear-website/</p>
+                <p>https://creative-semifreddo-a8b143.netlify.app/</p>
             </div>
         </div>
         </>

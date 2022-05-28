@@ -30,7 +30,7 @@ const MyReview = () => {
                     image: image,
                     description: data.description
                 }
-                fetch('http://localhost:5000/reviews', {
+                fetch('https://cryptic-citadel-18059.herokuapp.com/reviews', {
                     method: "POST",
                     headers: {
                         'content-type': 'application/json'

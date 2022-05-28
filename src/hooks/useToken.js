@@ -10,7 +10,7 @@ const useToken = (user) =>{
         const currentUser = {email: email};
         if(email){
             
-            fetch(`http://localhost:5000/users/${email}`,{
+            fetch(`https://cryptic-citadel-18059.herokuapp.com/users/${email}`,{
                 method: "PUT",
                 headers:{
                     'content-type' : 'application/json'

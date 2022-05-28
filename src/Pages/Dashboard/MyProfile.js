@@ -8,7 +8,7 @@ const MyProfile = () => {
     const [user] = useAuthState(auth);
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     useEffect(()=>{
-        fetch('http://localhost:5000/profile',{
+        fetch('https://cryptic-citadel-18059.herokuapp.com/profile',{
             method: "GET",
         })
         .then(res => res.json())
@@ -21,7 +21,7 @@ const MyProfile = () => {
         const address = data.address;
         const linkedinProfile = data.linkedinProfile;
         const profile = {education, city, address, linkedinProfile};
-        fetch('http://localhost:5000/profile',{
+        fetch('https://cryptic-citadel-18059.herokuapp.com/profile',{
             method: "POST",
             headers:{
                 'content-type' : 'application/json'

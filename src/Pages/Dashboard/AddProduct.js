@@ -33,7 +33,7 @@ const AddProduct = () => {
                     quantity: data.quantity,
                     description: data.description
                 }
-                fetch('http://localhost:5000/products', {
+                fetch('https://cryptic-citadel-18059.herokuapp.com/products', {
                     method: "POST",
                     headers: {
                         'content-type': 'application/json'
